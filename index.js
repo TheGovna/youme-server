@@ -27,11 +27,11 @@ io.on('connection', function(socket) {
   const userId = generateRandomUserId();
   users[userId] = socket;
 
-  console.log(userId);
-
   socket.on('client_create_user', function(msg) {
-    console.log('client_create_user');
-    socket.emit('server_create_user', userId);
+    const response = {
+      user_id: userId
+    };
+    socket.emit('server_create_user', response);
   });
 
   socket.on('disconnect', function() {

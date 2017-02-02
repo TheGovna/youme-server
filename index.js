@@ -23,7 +23,7 @@ io.on('connection', function(socket) {
 
   socket.on('client_create_user', function(msg) {
     console.log('client_create_user');
-    socket.emit('userId', userId);
+    socket.emit('server_create_user', userId);
   });
 
   socket.on('disconnect', function() {

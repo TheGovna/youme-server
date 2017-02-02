@@ -16,9 +16,10 @@ app.get('/', function(req, res) {
 });
 
 var users = {};
+var rooms = {};
 
 function generateRandomUserId() {
-  return (Math.random() * 0xFFFFFF<<0).toString(16);
+  return (Math.random() * 0xFFFFFFFF<<0).toString(16);
 }
 
 // Socket.io
@@ -34,12 +35,15 @@ io.on('connection', function(socket) {
     socket.emit('server_create_user', response);
   });
 
+  socket.on('client_create_room', function(msg) {
+    // TODO: create the room
+  });
+
   socket.on('disconnect', function() {
-    console.log('user disconnected');
+    console.log('user ' + userId + ' disconnected');
   });
 });
 
 var server = http.listen(process.env.PORT || 3000, function() {
   console.log('Listening on port %d.', server.address().port);
 });
-

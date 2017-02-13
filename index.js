@@ -35,6 +35,10 @@ io.on('connection', function(socket) {
     };
     console.log('client_create_user');
     console.log(response);
+    console.log('ALL USERS');
+    for (var user in users) {
+      console.log(user);
+    }
     socket.emit('server_create_user', response);
   });
 

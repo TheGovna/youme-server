@@ -19,6 +19,7 @@ var users = {};
 var rooms = {};
 
 function generateRandomUserId() {
+  console.log('GENERATING RANDOM USER');
   return (Math.random() * 0xFFFFFFFF<<0).toString(16);
 }
 

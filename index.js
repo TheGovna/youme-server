@@ -49,6 +49,10 @@ io.on('connection', function(socket) {
     socket.emit('server_create_room', msg);
   });
 
+  socket.on('test', function(msg) {
+    console.log('test');
+  });
+
   socket.on('disconnect', function() {
     console.log('user ' + userId + ' disconnected');
   });

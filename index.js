@@ -32,12 +32,14 @@ io.on('connection', function(socket) {
     const response = {
       user_id: userId
     };
+    console.log('client_create_user');
+    console.log(response);
     socket.emit('server_create_user', response);
   });
 
   socket.on('client_create_room', function(msg) {
     // TODO: create the room
-    console.log('CREATING ROOM!!!');
+    console.log('client_create_room');
     console.log(msg);
     socket.emit('server_create_room', msg);
   });

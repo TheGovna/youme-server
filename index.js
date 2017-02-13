@@ -37,6 +37,7 @@ io.on('connection', function(socket) {
 
   socket.on('client_create_room', function(msg) {
     // TODO: create the room
+    console.log('CREATING ROOM!!!');
   });
 
   socket.on('disconnect', function() {

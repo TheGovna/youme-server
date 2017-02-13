@@ -51,6 +51,7 @@ io.on('connection', function(socket) {
 
   socket.on('test', function(msg) {
     console.log('test');
+    socket.emit('test', {});
   });
 
   socket.on('disconnect', function() {
